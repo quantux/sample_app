@@ -7,10 +7,6 @@ gem 'rails', '4.2.0'
 gem 'bootstrap-sass', '3.2.0.0'
 # Bcrypt gem
 gem 'bcrypt', '3.1.7'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-#Use MySQL intead of sqlite
-gem 'mysql2', '~> 0.3.18'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,11 +34,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :production do
-	gem 'pg'
-end
-
 group :development, :test do
+
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+
+  #Use MySQL intead of sqlite
+  gem 'mysql2', '~> 0.3.18'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
