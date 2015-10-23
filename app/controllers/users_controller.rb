@@ -8,11 +8,18 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = @user.new(params[:user]) # Not the final implementation
+  	@user = User.new(user_params) # Not the final implementation
   	if @user.save
   		# Handle a successful save
   	else
 
   	end
   end
+
+  private
+
+  	def user_params
+  		params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  	end
+
 end
